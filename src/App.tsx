@@ -8,7 +8,7 @@ function App() {
         {/* Header - Celuar, Tablet e Desktop */}
         <header className="flex items-center gap-4 border-2 border-white p-3 md:w-fit md:max-w-md">
           <img
-            src="src/assets/LogoForza.webp"
+            src={`${import.meta.env.BASE_URL}/assets/img/LogoForza.webp`}
             alt="Logo do Festival do Horizon"
             width={64}
             height={64}
@@ -334,7 +334,7 @@ function App() {
                 <article className="flex h-full flex-col gap-2 border-2 border-white p-3 lg:p-2">
                   <div className="grid h-28 place-items-center rounded bg-white md:h-32 lg:h-24">
                     <img
-                      src="src/assets/PulseiraRosa.png"
+                      src={`${import.meta.env.BASE_URL}/assets/img/PulseiraRosa.png`}
                       alt="Pulseira Ultra, rosa choque"
                       width={112}
                       height={112}
@@ -359,7 +359,7 @@ function App() {
         {/* FOOTER */}
         <footer className="flex items-center gap-4 border-2 border-white p-3 md:p-4">
           <img
-            src="src/assets/ForzaFooter.png"
+            src={`${import.meta.env.BASE_URL}/assets/img/ForzaFooter.png`}
             alt=""
             width={56}
             height={56}
