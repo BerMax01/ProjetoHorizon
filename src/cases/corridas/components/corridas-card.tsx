@@ -6,7 +6,7 @@ type CorridasCardProps = {
   onSelect?: (id: number) => void;
 };
 
-export function CorridasCard({ corrida, selected  = false, onSelect }: CorridasCardProps) {
+export function CorridasCard({ corrida, selected = false, onSelect }: CorridasCardProps) {
   return (
     <li className="flex items-center gap-3 md:shrink-0 md:gap-0">
 
@@ -23,10 +23,11 @@ export function CorridasCard({ corrida, selected  = false, onSelect }: CorridasC
           <img src={`${import.meta.env.BASE_URL}/${corrida.imagesource}`} alt="" width={32} height={32} className="size-11" />
         </div>
         <div>
+
+          <h3 className="text-base font-extrabold">{corrida.nome}</h3>
           <p className="text-xs font-bold uppercase tracking-wide text-pink-400">
             Dia {corrida.data}
           </p>
-          <h3 className="text-base font-extrabold">{corrida.nome}</h3>
           <p className="text-sm text-neutral-300">{corrida.local}</p>
           <p className="text-sm text-neutral-300">Horário: {corrida.horario}</p>
         </div>
