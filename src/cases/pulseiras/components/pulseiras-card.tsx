@@ -19,7 +19,7 @@ export function PulseirasCard({ pulseira }: PulseirasCardProps) {
                 </div>
                 <h3 className="text-base font-extrabold lg:text-sm">{pulseira.nome}</h3>
                 <p className="text-sm text-neutral-300">{pulseira.descricao}</p>
-                <p className="mt-auto text-lg font-extrabold text-horizon-orange">R$ {pulseira.preco.toFixed(2).replace('.', ',')}</p>
+                <p className="mt-auto text-lg font-extrabold text-horizon-orange">R$ {Number(pulseira.preco).toFixed(2).replace('.', ',')}</p>
                 <button
                     type="button"
                     className="min-h-11 cursor-pointer rounded bg-linear-to-r from-horizon-red to-horizon-orange font-extrabold text-neutral-950"

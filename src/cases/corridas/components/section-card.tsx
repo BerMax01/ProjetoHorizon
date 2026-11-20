@@ -11,7 +11,7 @@ const estilosLinha = [
 ];
 
 export function SectionCard({ id }: SectionCardProps) {
-  const corridas = useCorrida();
+  const { corridas } = useCorrida();
   const corrida = corridas.find((c) => c.id === id);
   const linhas = corrida?.descricao.split("\n") ?? [];
 
