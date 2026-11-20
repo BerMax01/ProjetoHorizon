@@ -11,7 +11,7 @@ export function CorridasCard({ corrida, selected = false, onSelect }: CorridasCa
     <li className="flex items-center gap-3 md:shrink-0 md:gap-0">
 
 
-      {corrida.id !== 1 && (
+      {(corrida.id != 1) && (
         <span
           aria-hidden="true"
           className="hidden border-t-2 border-dashed border-white md:block md:w-12 md:shrink-0"

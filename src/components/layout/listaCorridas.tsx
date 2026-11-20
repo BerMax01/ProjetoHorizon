@@ -1,3 +1,4 @@
+import { CorridasCardSkeleton } from "../../cases/corridas/components/corrida-card-ghost";
 import { CorridasCard } from "../../cases/corridas/components/corridas-card";
 import { useCorrida } from "../../cases/corridas/hooks/use-corridas";
 
@@ -19,11 +20,17 @@ export function ListaCorridas({
             </h2>
 
             <div className="border-2 border-white p-3 md:p-5">
-                <ol className="flex max-h-96 flex-col gap-3 overflow-y-auto md:max-h-none md:flex-row md:items-center md:gap-0 md:overflow-x-auto md:overflow-y-hidden md:pb-3">
+                <ol className={`flex max-h-96 flex-col gap-3 overflow-y-auto md:max-h-none md:flex-row md:items-center md:gap-0 md:overflow-x-auto md:overflow-y-hidden md:pb-3 ${loading ? "overflow-y-hidden md:overflow-x-hidden" : ""}`}>
 
-                    {loading && <li className="text-neutral-400">Carregando...</li>}
+                    {loading && (
+                        <>
+                            {Array.from({ length: 10 }).map((_, index) => (
+                                <CorridasCardSkeleton key={index} showConnector={index !== 0} />
+                            ))}
+                        </>
+                    )}
 
-                    {error && <li className="text-red-500">Erro: {error}</li>}
+                    {error && <li className="w-full text-center text-red-600 text-lg font-bold py-6">Erro: {error}</li>}
 
                     {corridas.map((corrida) => (
                         <CorridasCard
